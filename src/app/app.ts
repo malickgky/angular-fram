@@ -3,10 +3,15 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
-export class App {
-  protected readonly title = signal('enset-app');
+export default class App {  //
+  email = signal('lamah@gmail.com');
+
+  updateEmail(newEmail: string) {
+    this.email.set(newEmail);
+  }
 }
